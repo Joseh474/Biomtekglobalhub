@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biomtekglobal- Medical Equipment Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0
+,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Header Section -->
+<header>
+
+    <div class="header-top">
+        <a href="#" class="logo">
+            <span class="biom">BIOM</span><span class="tek">TEK</span><br>
+            <span class="global">GLOBAL</span>
+        </a>
+        <br>
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-bar" 
+                placeholder="Search for products..." 
+                aria-label="Search for products"
+            />
+            <button onclick="searchProducts()" aria-label="Search">
+                <i class='bx bx-search'></i> Search
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation bar -->
+    <ul class="navlist">
+        <li><a href="#home" class="active"style="color:white;"><i class='bx bx-home'></i>Home</a></li>
+        <li><a href="#about"><i class='bx bxs-user'></i>About us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="community/community.html">Community</a></li>
+        <li><a onclick="loadPage('arduino/arduino.html')">Arduino</a></li>
+        <li class="dropdown-menu reveal">
+            <a href="#products">Products<i class='bx bxs-chevron-down-circle'></i></a>
+            <ul class="dropdown">
+                <li><a href="#Operating Theatre Equipment">Theatre Equipment</a></li>
+                <li><a href="#Laundry and CSSD Equipment">Laundry and CSSD Equipment</a></li>
+                <li><a href="#laboratory equipment">Laboratory Equipment</a></li>
+                <li><a href="#Radiology equipment">Imaging Equipment</a></li>
+                <li><a href="#Dental Unit">Dental Unit</a></li>
+                <li><a href="#Ward and Outpatient Physiotherapy">Ward and Outpatient Equipment</a></li>
+                <li><a href="#accessiories, reagents, spare parts and consumables">Accessories</a></li>
+            </ul>
+        </li>
+        <li><a href="#contact">Contact us</a></li>
+    </ul>
+
+    <div class="toggle"></div>
+    <div class="bx bx-menu" id="menu-icon"></div>
+</header>
+
+<!-- Home Section -->
+<section class="home reveal" id="home">
+
+    <div class="home-text">
+        <div class="slide">
+            <h1 class="typing-h1"><span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h1>
+            <p>
+                With an experience in distribution of medical equipment, accessories, and spare parts,
+                BIOMTEK is dedicated to delivering quality products and services to the healthcare system. 
+                Additionally, the BIOMTEK Electronics Hub specializes in providing Arduino boards, sensors,
+                and other electronics components for research projects, empowering innovation in engineering and technology field.
+            </p>
+            <div class="button-container">
+                <button class="btn" onclick="loadPage('arduino/arduino.html')">Electronics</button>
+                <button class="btn" onclick="loadPage('community/community.html')">Community</button>
+            </div>
+        </div>
+    </div>
+    <div class="background-animation"></div>
+
+</section>
+
+<div id="loader" style="display: none;">
+    <div class="loader-animation">
+        <div class="pulse-circle" style="background-color: blue;"></div>
+        <div class="pulse-circle" style="background-color:#ff4d05;"></div>
+        <div class="pulse-circle" style="background-color: blue;"></div>
+    </div>
+    <h2>Loading...</h2>
+</div>
+
+     <!-- About Us Section -->
+     <section class="about reveal" id="about">
+        <h2>About <span>Us</span></h2>
+        
+        <div class="about-wrapper">
+            <div class="about-text">
+                <div class="about-info">
+                    <i class='bx bx-time-five'></i>
+                    <h3>Experience & Expertise</h3>
+                    <p>With over two years of dedicated experience in medical equipment distribution, we deliver high-quality products and services tailored to healthcare needs.</p>
+                </div>
+
+                <div class="about-info">
+                    <i class='bx bx-globe'></i>
+                    <h3>Global Partnerships</h3>
+                    <p>Our strategic partnerships with leading companies in China enable us to provide reliable and innovative healthcare solutions designed to enhance patient care.</p>
+                </div>
+
+                <div class="about-info">
+                    <i class='bx bx-check-shield'></i>
+                    <h3>Quality Commitment</h3>
+                    <p>We maintain the highest standards in every aspect of our operations, from sourcing to customer service, ensuring healthcare facilities have access to the best tools and technologies.</p>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="img/add 2.jpg" alt="Medical Equipment Professional" />
+                <div class="stats-overlay">
+                    <div class="stats">
+                       
+                        <div class="stat-item">
+                            <span>100+</span>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat-item">
+                            <span>50+</span>
+                            <p>Community Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Expand Your Sales Section -->
+<section class="expand-sales reveal" id="expand-sales">
+    <div class="expand-sales-container">
+        <div class="expand-sales-content">
+            <h2>Expand Your Sales with <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h2>
+            <h3>Partner with BIOMTEK for Equipment Sales</h3>
+            <p>Boost your medical equipment sales by partnering with us. We provide a comprehensive platform to showcase and sell your equipment.</p>
+            
+            <ul class="sales-features">
+                <li><i class="bx bx-check-circle"></i>Wide Market Reach</li>
+                <li><i class="bx bx-line-chart"></i>Increased Sales Potential</li>
+                <li><i class="bx bx-support"></i>Professional Support</li>
+                <li><i class="bx bx-shield"></i>Trusted Partnership</li>
+            </ul>
+
+            <div class="expand-sales-instructions">
+                <p>Send us your equipment specifications including:</p>
+                <ul class="sales-features">
+                    <li><i class="bx bx-image"></i>Clear Product Images</li>
+                    <li><i class="bx bx-list-ul"></i>Detailed Specifications</li>
+                    <li><i class="bx bx-dollar"></i>Pricing Information</li>
+                </ul>
+            </div>
+
+            <p>Experience ease of partnering with BIOMTEK - Get in touch today and let's grow your sales together.</p>
+            
+            <button class="contact-bttn">
+                <i class="bx bx-envelope"></i>
+                <a href="mailto:sales@biomtekglobal.co.ke">sales@biomtekglobal.co.ke</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Operating Theatre Equipment Section -->
+<section class="Operating Theatre Equipment, reveal" id="Operating Theatre Equipment">
+    <div class="main-text">  
+        <h2>Our <span>Products</span></h2>
+        <h2>Operating Theatre Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/OPERATING TABLE 2.jpg','Operating Table', 'length: 2000mm, Trendelenburg: 25 degrees, Backsection:20 degrees, Lateral unit: 20 degrees, Head section: +70degrees, Head section: ±30 degrees -55 degrees stabndby backup battery')">
+            <img src="img/OPERATING TABLE 2.jpg" alt="Operating Table">
+            <h5>Operating Table</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/OPERATING LIGHT.jpg', 'Operating Light', 'Intesity: 160000 +- 10%, Diameter of light:500mm, Size of light field, Powersupply 220V|50HZ AC, Control; Touchpanel')">
+            <img src="img/OPERATING LIGHT.jpg" alt="Operating Light">
+            <h5>Operating Light</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/ANAESTHETIA.jpg', 'Anesthesia Machine', 'Features Integrated breathing circuit with APL valve, excellent tightness.   Replacing drive bellow is NOT required when operating adult/pediatric anesthesia.    Applied with 2 high-precision vaporizers.  10.1 inch touch screen with no dead space.  Real-time detection for loops, Paw, BPM, VT and compliance.   Comprehensive monitoring capabilities include ventilation parameters monitoring,preset parameters, alarm indication and breathing waveform monitoring.  Head light.   Altitude compensation function.    ACGO available to connect with T/Bain circuit for open operation. Yoke system with up to 3 back up cylinders (A type with 11 L size)(Optional).')">
+            <img src="img/ANAESTHETIA.jpg" alt="Anesthesia Machine">
+            <h5>Anesthesia Machine</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/MONITOR MAIN.jpg', 'Patient Monitor', ' Model .MPM-IT.  Heart rate : 15-300 BPM(adult ): 15-350.  BPM (Neonatal).    Resolution:1 BPM.    Accuracy ±1%')">
+            <img src="img/MONITOR MAIN.jpg" alt="Patient Monitor">
+            <h5>Patient Monitor</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/diaTH.jpg', 'Diathermy Unit', '')">
+            <img src="img/diaTH.jpg" alt="Diathermy Unit">
+            <h5>Diathermy Unit</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Laboratory Equipment Section -->
+<section class="laboratory equipments reveal" id="laboratory equipment">
+    <div class="main-text">  
+        <h2>Laboratory Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/MICROSCOPE 2.jpg', 'Microscope', 'Microscope     Model : MSC-BH102B     Inclined at 45° Binocular head     Interpupillary (55-75mm)')">
+            <img src="img/MICROSCOPE 2.jpg" alt="Microscope">
+            <h5>Microscope</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/FRIDGE 1.jpg', 'Fridge', )">
+            <img src="img/FRIDGE 1.jpg" alt="Fridge">
+            <h5>Fridge</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/CENTRIFUGE MAIN.jpg', 'Centrifuge', '.CfG-6M        .Speed (rmp) :6000        .Max RCF(xg): 2000       . Capacity (standard rotor):8×1.5/2.0/0.5/0.2ml')">
+            <img src="img/CENTRIFUGE MAIN.jpg" alt="Centrifuge">
+            <h5>Centrifuge</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+       
+        <div class="row" onclick="showModal('img/BIOCHM ANA.jpg', 'Biochemistry Analyzer', 'Used for conducting biochemical analysis of blood and other body fluids.')">
+            <img src="img/BIOCHM ANA.jpg" alt="Biochemistry Analyzer">
+            <h5>Biochemistry Analyzer</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/BIOSAFETY CABINET 2.jpg', '.BSC-1-800       .Work surface Height 750mm       .Sound emission ≤62dB(A)       .Illuminating lamp ; LED type       .Illumination ≥900 LX        . Airflow velocity: 0.5~1m/s speed adjustable         .Can optional Base stand')">
+            <img src="img/BIOSAFETY CABINET 2.jpg" alt="Biosafety Cabinet">
+            <h5>Biosafety Cabinet</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Modal for Full Product Display -->
+<div id="productModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content">
+    <div class="modal-body">
+        <!-- Navigation buttons and image will be added here dynamically --> </div>
+    <div id="modalCaption"></div>
+    <p id="modalDescription"></p>
+</div>
+
+    <!-- Laundry and CSSD Equipment Section -->
+<section class="Laundry and CSSD Equipment reveal" id="Laundry and CSSD Equipment">
+    <div class="main-text">  
+        <h2>Laundry and CSSD Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/WASHING MACHINE.jpg', 'Washing Machine', 'Used for cleaning hospital linens and garments to maintain hygiene standards.')">
+            <img src="img/WASHING MACHINE.jpg" alt="Washing Machine">
+            <h5>Washing Machine</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/AUTOCLAVE 2.jpg', 'Autoclave', '.ST-P18       . Volume 18 L       .Chamber size (∅×H) (mm)        .Rated working temperature (C°) 126')">
+            <img src="img/AUTOCLAVE 2.jpg" alt="Autoclave">
+            <h5>Autoclave</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/pressure .jpg', 'Pressure steam sterilizer', '')">
+            <img src="img/pressure .jpg" alt="Washing Machine">
+            <h5>Pressure steam sterilizer </h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/bench top auto.jpg', 'Bench-top Autoclave', '')">
+      
+    </div>
+</section>
+
+
+    <!-- Ward and Outpatient Physiotherapy Section -->
+<section class="ward-outpatient-physiotherapy reveal" id="ward-outpatient-physiotherapy">
+    <div class="main-text">  
+        <h2>Medical Furniture, Ward, Outpatient, and Physiotherapy</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/oxygen cons.jpg', 'Oxygen Concentrator', '2 oxygen outlet with controllable flowmeter.        Audible and visual alarms for low oxygen concentration (<82%) and powersupply failure.               Audible and visual alarms for high temperature, no flow rate and low/high pressure.                Power efficiency < 70 W/L/min.')">
+            <img src="img/oxygen cons.jpg" alt="Oxygen Concentrator">
+            <h5>Oxygen Concentrator</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/ULTRASOUND IMAGING.jpg', '')">
+            <img src="img/ULTRASOUND IMAGING.jpg" alt="Ultrasound Therapy">
+            <h5>Ultrasound Therapy</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/sunction machine.jpg', 'Power consumption: 120W                Maximum negative pressure: ≥0.09 MPa                Pump rate: ≥20 L/min        Noise: ≤60 dB                Continuous Working Time: 0-30 min                Bottle volume: 2500 ml, 2 pcs')">
+            <img src="img/sunction machine.jpg" alt="Suction Machine">
+            <h5>Suction Machine</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/BED 1.jpg', 'Patient Bed', '')">
+            <img src="img/BED 1.jpg" alt="Patient Bed">
+            <h5>Patient Bed</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/EQ6B.jpg', 'Examination Table', '')">
+            <img src="img/EQ6B.jpg" alt="Examination Table">
+            <h5>Examination Table</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+    </div>
+</section>
+
+   
+
+   <!-- Critical Care Equipment Section -->
+<section class="critical-care-equipment reveal" id="critical-care-equipment">
+    <div class="main-text">  
+        <h2>Critical Care Equipment</h2>
+        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/vent2.jpg', 'Ventilator', 'Assists or replaces a patient\'s breathing function by providing controlled airflow to their lungs.')">
+            <img src="img/vent2.jpg" alt="Ventilator">
+            <h5>Ventilator</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/dial.jpg', 'Dialysis Machine', 'Removes waste products and excess fluids from the blood when the kidneys are not functioning properly.')">
+            <img src="img/dial.jpg" alt="Dialysis Machine">
+            <h5>Dialysis Machine</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/sunction machine.jpg', 'Suction Machine', 'Removes fluids such as mucus or blood from a patient\'s airway to maintain a clear breathing passage.')">
+            <img src="img/sunction machine.jpg" alt="Suction Machine">
+            <h5>Suction Machine</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/BED 5.jpg', 'ICU Bed', 'An adjustable bed designed for critical care patients, providing comfort and ease of access for caregivers.')">
+            <img src="img/BED 5.jpg" alt="ICU Bed">
+            <h5>ICU Bed</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/bed panel.jpg', 'Bed Panel', 'Provides monitoring and control of medical equipment connected to the patient, such as oxygen and suction devices.')">
+            <img src="img/bed panel.jpg" alt="Bed Panel">
+            <h5>Head bed units</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Accessories Section -->
+<section class="accessories-reagents-spare-parts-consumables reveal" id="accessories-reagents-spare-parts-consumables">
+    <div class="main-text">  
+        <h2>Accessories, Reagents, Spare Parts, and Consumables</h2>
+        <p>
+            We offer a wide range of medical accessories, spare parts, reagents, and consumables for all types of new or used medical equipment. 
+            Contact our team for specific inquiries.
+        </p>
+        <p> Large range of spare parts compatible with leading brands.</p>
+    </div>
+    <div class="product-content">
+        <div class="row" onclick="showModal('img/air compresor.jpg')">
+            <img src="img/air compresor.jpg" alt="Chest Electrode">
+            <h5>AIR COMPRESOR</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/CLAMP.jpg')">
+            <img src="img/CLAMP.jpg" alt="Clamp">
+            <h5>CLAMP</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/O2 CELLS.jpg')">
+            <img src="img/O2 CELLS.jpg" alt="O2 Cells">
+            <h5>O2 CELLS</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/NIBP.jpg', 'NIBP', '')">
+            <img src="img/NIBP.jpg" alt="NIBP">
+            <h5>NIBP CUFF</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/ELECTRODE.jpg', 'ELECTRODE', '')">
+            <img src="img/ELECTRODE.jpg" alt="Electrode">
+            <h5>ELECTRODE</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/PROPE ADDDDDDDTER.jpg')">
+            <img src="img/PROPE ADDDDDDDTER.jpg" alt="End Connectors">
+            <h5>END CONNECTORS</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+
+        <div class="row" onclick="showModal('img/probe.jpg')">
+            <img src="img/probe.jpg" alt="probe">
+            <h5>PROBE</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/Bp air preassure pumb.jpg')">
+            <img src="img/Bp air preassure pumb.jpg" alt="Electrode">
+            <h5>BLOOD PRESSURE AIR PUMP</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/vacum pumb.jpg')">
+            <img src="img/vacum pumb.jpg" alt="End Connectors">
+            <h5>VACUM PUMP</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+
+        <div class="row" onclick="showModal('img/SAFETY VALVE .jpg')">
+            <img src="img/SAFETY VALVE .jpg" alt="Electrode">
+            <h5>PRESSURE GUAGE</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        
+
+        <div class="row" onclick="showModal('img/OXYGEN REGULATOR.jpg')">
+            <img src="img/OXYGEN REGULATOR.jpg" alt="probe">
+            <h5>OXYGEN REGULATOR</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/HEATING ELEMENT.jpg')">
+            <img src="img/HEATING ELEMENT.jpg" alt="Electrode">
+            <h5>HEATING ELEMENT</h5>
+             <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+        <div class="row" onclick="showModal('img/9V BATTERY.jpg')">
+            <img src="img/9V BATTERY.jpg" alt="End Connectors">
+            <h5>9 V BATTERY</h5>
+           <a href="https://wa.me/+254745284565" class="inquire-btn">
+                        <i class="fab fa-whatsapp"></i> Inquire Now
+                    </a>
+        </div>
+    </div>
+</section>
+
+   
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="service right">
+            <h3>After sale services</h3>
+            <p>We offer free installation and user training.</p>
+        </div>
+       
+        <div class="maintenance-services">
+            
+            <div class="text-content">
+                <h3>Medical Equipment Maintenance Services</h3>
+                <p>With a team of engineer and certified technicians, biomtek is equiped to handle broad range of medical equipment support system </p>
+                <p>We offer the following services;</p>
+                
+                 <strong>
+                    <ol>
+                        <li>1.  Corrective repairs</li>
+                        <li>2.  Preventive maintainance</li>
+                        <li>3.  Refurbishment and upgrading medical equipment with implementation of quality and safety standards</li>
+                    </ol>
+                  </strong>
+
+                  <br><br><br>
+
+                  <p>Contact us to learn how we can support your hospital maintanance requirement.</p>
+            </div>
+            <div class="image-content">
+                <img src="img/service 2.jpg" alt="Medical Equipment Maintenance" />
+               
+
+            </div>
+            
+        </div>
+        <button class="contact-btn"><a href="mailto:info@biomtekglobal.co.ke">contact us</a></button>
+    </section>
+
+    
+
+    <!-- Compact Contact Section with Unique Social Icon Classes -->
+<section class="contact reveal" id="contact">
+    <div class="contact-content">
+        <h2>Contact <span>Us</span></h2>
+        <p>We're here to assist you. Reach out via phone, email, or social media:</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class='bx bx-phone'></i>
+                <p>+254 745 284 565 | +254 790 235 311</p>
+            </div>
+            <p>For general inquiries;</p>
+            <div class="contact-item">
+                <i class='bx bx-envelope'></i>
+                <p><a href="mailto:info@biomtekglobal.co.ke">info@biomtekglobal.co.ke</a></p>
+            </div>
+            <p>Sales inquiries;</p>
+            <div class="contact-item">
+                <i class='bx bx-envelope'></i>
+                <p><a href="mailto:sales@biomtekglobal.co.ke">sales@biomtekglobal.co.ke</a></p>
+            </div>
+            <div class="contact-social">
+                <a target="_blank" href="mailto:infobiomtek@gmail.com"  class="icon-gmail"><i class='bx bxl-gmail'></i></a>
+                <a target="_blank" href="https://x.com/BIOMTEK?t=iQcGA5199x-TF_SaHbhnKw&s=08" class="icon-twitter"><i class='bx bxl-twitter'></i></a>
+                <a target="_blank" href="https://www.instagram.com/biomtek?igsh=YzljYTk1ODg3Zg==" class="icon-instagram"><i class='bx bxl-instagram'></i></a>
+                <a target="_blank" href="https://wa.me/+254790235311"  class="icon-whatsapp"><i class='bx bxl-whatsapp'></i></a>
+                <a target="_blank" href="#" class="icon-linkedin"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Unique Benefits Section -->
+    <section class="unique-benefits reveal">
+        <h2>Discover Our Unique Product Benefits</h2>
+        <p>At <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span>., we pride ourselves on offering quality medical equipment and accessories.
+            Our products are designed to enhance patient care and operational efficiency in healthcare systems worldwide.</p>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <h3>Quality Assurance</h3>
+                <p>Our products meets the standards of quality and safety, complying with <span>ISO, FDA AND CE</span> regulations.
+                     Our services adheres to industry standards and regulations.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>Partnerships</h3>
+                <p>We collaborate with local & Global companies to bring you the best medical solutions available.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="partner-brands">
+        <h2>Brands</h2>
+        
+            <div class="brands-container" id="brands-Container">
+                <div class="brand"><img src="img/brand 1.jpg" alt="Brand 1"></div>
+                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
+                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
+                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
+                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
+                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
+                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
+                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
+                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
+                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
+                <!-- Cloning brands for continuous scrolling -->
+                <div class="brand"><img src="img/brand 1.jpg" alt="Brand 1"></div>
+                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
+                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
+                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
+                <div class="brand"><img src ="brand 5.jpg" alt="Brand 5"></div>
+                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
+                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
+                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
+                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
+                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
+                <div class="brand"><img src="img/brand 1.jpg" alt="Brand 1"></div>
+                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
+                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
+                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
+                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
+                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
+                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
+                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
+                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
+                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
+                <!-- Cloning brands for continuous scrolling -->
+                <div class="brand"><img src="img/brand 1.jpg" alt="Brand 1"></div>
+                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
+                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
+                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
+                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
+                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
+                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
+                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
+                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
+                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
+            </div>
+        
+    </section>
+   
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2><span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h2>
+                <p>Advancing Medical Technology for Professional Excellence</p>
+            </div>
+            <div class="footer-center">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Medical Equipment</a></li>
+                    <li><a href="#">Professional Training</a></li>
+                    <li><a href="#">Consultancy Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Research Publications</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Stay Informed</h3>
+                <p>Subscribe to our newsletter for the latest medical technology and professional development.</p>
+                <form action="#">
+                    <input type="email" placeholder="Your professional email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span>
+                All rights reserved. Empower. Innovate. collaborate. Network</p>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
