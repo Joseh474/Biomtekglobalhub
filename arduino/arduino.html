@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOMTEK - Arduino & Electronics Components</title>
+    <link rel="stylesheet" href="arduino.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">
+                   
+                    <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="/store" class="nav-link active">Store</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button id="cart-button" class="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Arduino & Electronics Components</h1>
+                    <p class="intro">Welcome to <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span> Electronics Hub! Explore our wide range of Arduino boards, sensors, microcontrollers, and other electronics components designed for students, researchers, and hobbyists.</p>
+                    <p class="slogan">Building the Future, Powered by <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></p>
+                    <div class="hero-buttons">
+                        <button class="cta-button">Explore Products</button>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="img/arduino-education.jpg" alt="Arduino Education" class="main-image">
+                    <div class="image-overlay">
+                        <div class="feature-point">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Educational Kits</span>
+                        </div>
+                        <div class="feature-point">
+                            <i class="fas fa-tools"></i>
+                            <span>Professional Tools</span>
+                        </div>
+                        <div class="feature-point">
+                            <i class="fas fa-robot"></i>
+                            <span>Robotics Components</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Section -->
+        <section id="product-categories">
+            <div class="category-container">
+                <!-- Arduino Boards Category -->
+                <div class="category-section">
+                    <h2 class="category-title">Arduino Boards</h2>
+                    <div class="category-description">
+                        <p>Professional-grade Arduino microcontroller boards for your electronics projects.</p>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Arduino Uno R3 -->
+                        <div class="product-card" data-product-id="uno-r3">
+                            <div class="product-image">
+                                <img src="img/Arduino Uno R3.jpg" alt="Arduino Uno R3">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Uno R3</h3>
+                                <p class="price">Ksh 1,400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>ATmega328P microcontroller</li>
+                                        <li>14 digital I/O pins</li>
+                                        <li>6 analog inputs</li>
+                                        <li>USB programming interface</li>
+                                        <li>16 MHz clock speed</li>
+                                        <li>Operating voltage: 5V</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Arduino Nano -->
+                        <div class="product-card" data-product-id="nano">
+                            <div class="product-image">
+                                <img src="img/Arduino Nano.jpg" alt="Arduino Nano">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Nano</h3>
+                                <p class="price">Ksh 1,100</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Compact form factor</li>
+                                        <li>ATmega328 microcontroller</li>
+                                        <li>Breadboard-friendly design</li>
+                                        <li>Mini-B USB connection</li>
+                                        <li>Same functionality as Uno</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Arduino Pro Mini -->
+                        <div class="product-card" data-product-id="pro-mini">
+                            <div class="product-image">
+                                <img src="img/Arduino Pro mini.jpg" alt="Arduino Pro Mini">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Pro Mini</h3>
+                                <p class="price">Ksh 700</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>ATmega328P microcontroller</li>
+                                        <li>Minimalist design</li>
+                                        <li>Custom connector options</li>
+                                        <li>Perfect for embedded projects</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sensors Section -->
+                <div class="category-section">
+                    <h2 class="category-title">Sensors</h2>
+                    <div class="category-description">
+                        <p>Comprehensive range of sensors for all your measurement and detection needs.</p>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Temperature Sensors -->
+                        <div class="product-card" data-product-id="lm35dz">
+                            <div class="product-image">
+                                <img src="img/Lm 35 temperature sensor.jpg" alt="LM35DZ Temperature Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>LM35DZ Temperature Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Precision temperature measurement</li>
+                                        <li>Linear output</li>
+                                        <li>Calibrated in Celsius</li>
+                                        <li>Operating range: -55°C to 150°C</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- DHT11/DHT22 -->
+                        <div class="product-card" data-product-id="dht">
+                            <div class="product-image">
+                                <img src="img/DHT11 humidity and temperature sensor.jpg" alt="DHT11/DHT22 Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>DHT11/DHT22 Sensor</h3>
+                                <p class="price">Ksh 300</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Combined temperature & humidity</li>
+                                        <li>Digital output</li>
+                                        <li>Pre-calibrated</li>
+                                        <li>Easy to interface</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- PIR Motion Sensor -->
+                        <div class="product-card" data-product-id="pir">
+                            <div class="product-image">
+                                <img src="img/PIR motion sensor.jpg" alt="PIR Motion Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>PIR Motion Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Passive infrared detection</li>
+                                        <li>Adjustable sensitivity</li>
+                                        <li>Detection range: up to 7m</li>
+                                        <li>Wide detection angle: 120°</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- LDR Light Sensor -->
+                        <div class="product-card" data-product-id="ldr">
+                            <div class="product-image">
+                                <img src="img/LDR.jpg" alt="Photoresistor (LDR)">
+                            </div>
+                            <div class="product-info">
+                                <h3>Photoresistor (LDR)</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Light-dependent resistance</li>
+                                        <li>Analog output</li>
+                                        <li>Wide sensitivity range</li>
+                                        <li>Ideal for light detection</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- MQ Gas Sensor -->
+                        <div class="product-card" data-product-id="mq">
+                            <div class="product-image">
+                                <img src="img/mq.jpg" alt="MQ Series Gas Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>MQ Series Gas Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Multiple gas detection</li>
+                                        <li>High sensitivity</li>
+                                        <li>Fast response time</li>
+                                        <li>Analog output</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Sound Sensor -->
+                        <div class="product-card" data-product-id="sound">
+                            <div class="product-image">
+                                <img src="img/mic module.jpg" alt="Microphone Module">
+                            </div>
+                            <div class="product-info">
+                                <h3>Microphone Module</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Sound level detection</li>
+                                        <li>Adjustable sensitivity</li>
+                                        <li>Digital & analog output</li>
+                                        <li>Built-in amplifier</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Fingerprint Sensor -->
+                        <div class="product-card" data-product-id="fingerprint">
+                            <div class="product-image">
+                                <img src="img/gt5sensor.jpg" alt="GT511C1R Fingerprint Scanner">
+                            </div>
+                            <div class="product-info">
+                                <h3>GT511C1R Fingerprint Scanner</h3>
+                                <p class="price">Ksh 1,500</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>32-bit CPU</li>
+                                        <li>Stores up to 20 fingerprints</li>
+                                        <li>360° recognition</li>
+                                        <li>UART interface</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Pulse Sensor -->
+                        <div class="product-card" data-product-id="pulse">
+                            <div class="product-image">
+                                <img src="img/pulse sensor.jpg" alt="Pulse Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Pulse Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Optical heart rate detection</li>
+                                        <li>Noise cancellation</li>
+                                        <li>Plug-and-play design</li>
+                                        <li>Arduino compatible</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Pulse Sensor -->
+                        <div class="product-card" data-product-id="pulse">
+                            <div class="product-image">
+                                <img src="img/pulse2.jpg" alt="Pulse Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Pulse Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Optical heart rate detection</li>
+                                        <li>Noise cancellation</li>
+                                        <li>Plug-and-play design</li>
+                                        <li>Arduino compatible</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- MAX30102 Sensor -->
+                        <div class="product-card" data-product-id="max30102">
+                            <div class="product-image">
+                                <img src="img/max ox.jpg" alt="MAX30102 Pulse Oximeter">
+                            </div>
+                            <div class="product-info">
+                                <h3>MAX30102 Pulse Oximeter</h3>
+                                <p class="price">Ksh 300</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Blood oxygen monitoring</li>
+                                        <li>Heart rate measurement</li>
+                                        <li>I2C interface</li>
+                                        <li>Integrated LED drivers</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card" data-product-id="muscle-sensor">
+                            <div class="product-image">
+                                <img src="img/muscle.jpg" alt="Muscle Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Muscle Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Measures muscle activity</li>
+                                        <li>High sensitivity and precision</li>
+                                        <li>Compact and lightweight design</li>
+                                        <li>Analog output for easy interfacing</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- More sensors... -->
+                    </div>
+                </div>
+
+               <!-- Controllers Section -->
+<div class="category-section">
+    <h2 class="category-title">Controllers & Modules</h2>
+    <div class="product-grid">
+
+        <!-- L298N Motor Driver -->
+        <div class="product-card" data-product-id="l298n">
+            <div class="product-image">
+                <img src="img/L298N Motor Drive.jpg" alt="L298N Motor Driver">
+            </div>
+            <div class="product-info">
+                <h3>L298N Motor Driver</h3>
+                <p class="price">Ksh 500</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Dual H-Bridge motor driver</li>
+                        <li>Controls DC motors and stepper motors</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- 5V Relay Module -->
+        <div class="product-card" data-product-id="5v-relay">
+            <div class="product-image">
+                <img src="img/relay.jpg" alt="5V Relay Module">
+            </div>
+            <div class="product-info">
+                <h3>5V Relay Module</h3>
+                <p class="price">Ksh 250</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Allows Arduino to control high-voltage devices</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- HC-05 Bluetooth Module -->
+        <div class="product-card" data-product-id="hc-06">
+            <div class="product-image">
+                <img src="img/HC-05 Bluetooth Module.jpg" alt="HC-05 Bluetooth Module">
+            </div>
+            <div class="product-info">
+                <h3>HC-06 Bluetooth Module</h3>
+                <p class="price">Contact for Price</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Facilitates wireless communication between Arduino and Bluetooth-enabled devices</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- HC-06 Bluetooth Module -->
+        <div class="product-card" data-product-id="hc-06">
+            <div class="product-image">
+                <img src="img/HC-05 Bluetooth Module.jpg" alt="HC-05 Bluetooth Module">
+            </div>
+            <div class="product-info">
+                <h3>HC-05 Bluetooth Module</h3>
+                <p class="price">Contact for Price</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Facilitates wireless communication between Arduino and Bluetooth-enabled devices</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+                  <!-- Electronic Components Section -->
+<div class="category-section">
+    <h2 class="category-title">Electronic Components</h2>
+    <div class="product-grid">
+
+        <!-- Resistors -->
+        <div class="product-card" data-product-id="resistors">
+            <div class="product-image">
+                <img src="img/resistor.jpg" alt="Resistors">
+            </div>
+            <div class="product-info">
+                <h3>Resistors</h3>
+                <p class="price">KSH 10 each</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Essential for voltage and current control</li>
+                        <li>Various resistance values available</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Capacitors -->
+        <div class="product-card" data-product-id="capacitors">
+            <div class="product-image">
+                <img src="img/capasitor.jpg" alt="Capacitors">
+            </div>
+            <div class="product-info">
+                <h3>Capacitors</h3>
+                <p class="price">KSH 20 each</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Stores and releases electrical energy</li>
+                        <li>Available in various capacitance values</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Diodes -->
+        <div class="product-card" data-product-id="diodes">
+            <div class="product-image">
+                <img src="img/diodes.jpg" alt="Diodes">
+            </div>
+            <div class="product-info">
+                <h3>Diodes</h3>
+                <p class="price">KSH 10 each</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Allows current flow in one direction</li>
+                        <li>Used for rectification and protection</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Transistors -->
+        <div class="product-card" data-product-id="transistors">
+            <div class="product-image">
+                <img src="img/transistors.jpg" alt="Transistors">
+            </div>
+            <div class="product-info">
+                <h3>Transistors</h3>
+                <p class="price">KSH 10 each</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Switching and amplification functions</li>
+                        <li>Available in NPN and PNP types</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+                <!-- Accessories Continued -->
+<div class="category-section">
+    <h2 class="category-title">Additional Accessories</h2>
+    <div class="product-grid">
+
+        <div class="product-card" data-product-id="power-supply-module">
+            <div class="product-image">
+                <img src="img/powersuply.jpg" alt="Power Supply">
+            </div>
+            <div class="product-info">
+                <h3>Power Supply Module</h3>
+                <p class="price">KSH 250</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Stable voltage supply</li>
+                        <li>Perfect for Arduino projects</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-product-id="project-enclosure">
+            <div class="product-image">
+                <img src="img/case.jpg" alt="Project Enclosure">
+            </div>
+            <div class="product-info">
+                <h3>Project Enclosure</h3>
+                <p class="price">KSH 200</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Protective case for projects</li>
+                        <li>Durable and compact design</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-product-id="solderable-breadboard">
+            <div class="product-image">
+                <img src="img/solderboard.jpg" alt="Solderable Breadboard">
+            </div>
+            <div class="product-info">
+                <h3>Solderable Breadboard</h3>
+                <p class="price">KSH 150</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Permanent circuit connections</li>
+                        <li>Compact and easy to use</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-product-id="matrix-keypad">
+            <div class="product-image">
+                <img src="img/4x matrixboard.jpg" alt="Matrix Keypad">
+            </div>
+            <div class="product-info">
+                <h3>4x5 Matrix Keypad</h3>
+                <p class="price">KSH 500</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Membrane switch keypad</li>
+                        <li>Compact and versatile input</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-product-id="jumper-wires">
+            <div class="product-image">
+                <img src="img/jumper .jpg" alt="Jumper Wires">
+            </div>
+            <div class="product-info">
+                <h3>Jumper Wires Pack</h3>
+                <p class="price">FREE</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Essential for prototyping</li>
+                        <li>Various lengths included</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Robot Components -->
+<div class="category-section">
+    <h2 class="category-title">Robot Components</h2>
+    <div class="product-grid">
+
+        <div class="product-card" data-product-id="robot-wheels">
+            <div class="product-image">
+                <img src="img/wheels.jpg" alt="Robot Wheels">
+            </div>
+            <div class="product-info">
+                <h3>Robot Wheels</h3>
+                <p class="price">KSH 150</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>High-quality wheels</li>
+                        <li>Suitable for various robot projects</li>
+                        <li>Grade A & B options</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-product-id="dc-motors">
+            <div class="product-image">
+                <img src="img/motor.jpg" alt="DC Motor">
+            </div>
+            <div class="product-info">
+                <h3>DC Motors 3-6V</h3>
+                <p class="price">KSH 300</p>
+                <div class="product-details">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>High-quality DC motors</li>
+                        <li>Grade A & B available</li>
+                        <li>Perfect for robotics</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+                
+                <!-- Contact Section for Custom Requirements -->
+                <div class="custom-requirements">
+                    <h2>Can't Find What You Need?</h2>
+                    <p>We stock many more components than listed here. Contact us for:</p>
+                    <ul>
+                        <li>Custom component requirements</li>
+                        <li>Bulk orders</li>
+                        <li>Special specifications</li>
+                        <li>Technical support</li>
+                    </ul>
+                    <button class="contact-button" onclick="scrollToContact()">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose">
+            <h2>Why Choose BIOMTEK?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>High-quality Products</h3>
+                    <p>Genuine components with warranty</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Student Discounts</h3>
+                    <p>Special pricing for students and educational institutions</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Technical Support</h3>
+                    <p>Expert assistance for all your projects</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>1-2 weeks delivery after payment confirmation</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bulk-ordering" class="bulk-section">
+            <h2>Bulk Ordering for Clubs and Classes</h2>
+            <div class="bulk-order-content">
+                <div class="bulk-info">
+                    <div class="steps">
+                        <div class="step">
+                            <i class="fas fa-users"></i>
+                            <h3>Group Information</h3>
+                            <p>Tell us about your institution, club, or class size</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-list"></i>
+                            <h3>Component List</h3>
+                            <p>Select components and specify quantities needed</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-percentage"></i>
+                            <h3>Get Discount</h3>
+                            <p>Receive special pricing based on order volume</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-truck"></i>
+                            <h3>Single Shipment</h3>
+                            <p>All items delivered together to your institution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="bulk-order-form" class="bulk-order-form">
+                    <h3>Submit Bulk Order Request</h3>
+                    
+                    <div class="form-group">
+                        <label for="institution">Institution Name *</label>
+                        <input type="text" id="institution" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-person">Contact Person *</label>
+                        <input type="text" id="contact-person" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="group-size">Number of Students/Members *</label>
+                        <input type="number" id="group-size" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Components Needed</label>
+                        <div class="component-list">
+                            <div class="component-item">
+                                <label for="arduino-uno">Arduino Uno R3</label>
+                                <input type="number" id="arduino-uno" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="arduino-nano">Arduino Nano</label>
+                                <input type="number" id="arduino-nano" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="esp32">ESP32 Module</label>
+                                <input type="number" id="esp32" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="sensors">Basic Sensor Kit</label>
+                                <input type="number" id="sensors" min="0" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">Additional Requirements</label>
+                        <textarea id="additional-notes" rows="4" 
+                            placeholder="List any specific requirements or additional components needed"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-date">Preferred Delivery Date</label>
+                        <input type="date" id="delivery-date">
+                    </div>
+
+                    <button type="submit" class="submit-bulk-order">Submit Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: info@biomtek.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: [Your Address]</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#bulk-ordering">Bulk Orders</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Delivery Information</h3>
+                <p>Processing time: 1-2 weeks after payment</p>
+                <p>Single shipment for all items</p>
+                <p>Satisfaction guaranteed or money back</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="subscribe-button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BIOMTEK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="arduino.js"></script>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: </strong> <span>0.00</span>
+            </div>
+            <div class="modal-actions">
+                <button class="continue-shopping">Continue Shopping</button>
+                <button class="proceed-checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <h2>Checkout</h2>
+            <div class="order-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="order-total">
+                Total: $<span>0.00</span>
+            </div>
+    
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Name</label>
+                    <input type="text" id="customer-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Address</label>
+                    <textarea id="customer-address" name="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email</label>
+                    <input type="email" id="customer-email" name="email" required>
+                </div>
+                <input type="hidden" id="order-data" name="orderData">
+                <button type="submit" class="payment-option">Place Order</button>
+            </form>
+            
+            <button class="close-payment">Cancel</button>
+        </div>
+    </div>
+    
+</body>
+</html>
