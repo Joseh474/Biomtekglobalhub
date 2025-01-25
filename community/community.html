@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - BIOMTEK Global</title>
+    <link rel="stylesheet" href="community.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <a href="index.html" class="logo">
+                <span class="biom">BIOM</span><span class="tek">TEK</span><br>
+                <span class="global">GLOBAL</span>
+            </a>
+        </div>
+        <ul class="navlist">
+            <li><a href="index.html"><i class='bx bx-home'></i>Home</a></li>
+            <li><a href="community.html" class="active">Community</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class='bx bx-menu' id="menu-icon"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Join Our Community</h1>
+            <p>Connect with medical engineering professionals and students worldwide. Innovate, network, collaborate, and grow together.</p>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community reveal">
+        <!-- Image Gallery -->
+        <div class="gallery-container">
+            <button class="gallery-nav prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="gallery-wrapper">
+                <img src="img/add 1.jpg" alt="Community Event 1" class="gallery-image active">
+                <img src="img/add 2.jpg" alt="Community Event 2" class="gallery-image">
+            </div>
+            <button class="gallery-nav next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="gallery-dots"></div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-container">
+            <div class="benefits-section professionals">
+                <h2>Professionals</h2>
+                <ul>
+                    <li><b>Networking opportunities</b> by accessing and engaging in our expert-led workshops, seminars, and summits.</li>
+                    <li><b>Marketing your services</b> through our events and community platform.</li>
+                    <li><b>Access to exclusive events</b> we organize events each year with our global partners.</li>
+                    <li><b>Collaboration on innovative projects</b> connect with our international partners, professionals to develop new technologies with our financial and technical support.</li>
+                    <li><b>Tap and connect into our international network</b> of partners and explore opportunities for collaborations, investment, and advancement in medical engineering.</li>
+                    <li><b>Access to job postings</b> and career advancement opportunities within the community.</li>
+                </ul>
+            </div>
+
+            <div class="benefits-section students">
+                <h2>Students</h2>
+                <ul>
+                    <li><b>Financial support for student projects</b> approved by the company.</li>
+                    <li><b>Medical engineering panel debates, presentations,</b> and demonstrations for specific technologies, equipment, and other products.</li>
+                    <li><b>Access to exclusive scholarships</b> and grants for outstanding projects and research.</li>
+                    <li><b>Through our events, you get opportunities to meet healthcare providers</b> and key industry companies within the healthcare sector from around the world.</li>
+                    <li><b>Opportunity to participate in our</b> skills-based workshops, peer-to-peer networking events, and startup pitch theatres.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <div class="scam-alert">
+                <i class='bx bx-shield-quarter'></i>
+                <p><strong>SCAM ALERT!</strong> Get verified information about the community.</p>
+                <div class="contact-info">
+                    <p>Call/WhatsApp: <a href="tel:+254745284565">0745284565</a> or <a href="tel:+254790235311">0790235311</a></p>
+                </div>
+            </div>
+            <p class="terms">Terms and conditions apply</p>
+            <a href="terms/terms.html" class="cta-button">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 <span class="biom">BIOM</span><span class="tek">TEK</span></p>
+            <p>Empower. Innovate. Collaborate. Network</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="community.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* CSS Reset and Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    text-decoration: none; /* Remove text decoration */
+    list-style: none; /* Remove list styling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+:root {
+    --bg-color:  linear-gradient(to bottom, #b4c8d1, #d5d6bf);
+    --second-bg-color:   linear-gradient(to bottom, #b4c8d1, #d5d6bf);
+    --third-bg-color:rgb(25, 141, 177);
+    --text-color:#0c08ff;
+    --second-color:#0a0101;
+    --main-color:#69bfe7;
+    --second-main-color:#ff4d05;
+    --big-font:5rem;
+    --h2-font:3rem;
+    --p-font:1.1rem;
+    --forth-bg-color:rgb(66, 61, 61);
+}
+
+/* General Styles */
+body {
+    background: var(--bg-color); /* Use the defined background gradient */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 85%; 
+    margin: 50px auto; /* Center the container */
+    padding:50px; /* Padding inside the container */
+    background: var(--bg-color); /* White background for the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+   
+}
+
+h1 {
+    color: var(--text-color); /* Use the defined text color */
+    font-size: var(--big-font); /* Use the defined big font size */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center;
+    align-items: center;
+}
+
+h2 {
+    color: var(--second-color); /* Use the defined secondary color */
+    font-size: var(--h2-font); /* Use the defined H2 font size */
+    margin-top: 20px; /* Space above the subheading */
+    margin-bottom: 10px; /* Space below the subheading */
+    text-align: center;
+    align-items: center;
+}
+
+p {
+    line-height: 1.6; /* Improved line height for readability */
+    color: #666; /* Light gray color for paragraph text */
+    font-size: var(--p-font); /* Use the defined paragraph font size */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+ul {
+    padding: 0; /* Remove padding */
+    margin-bottom: 20px; /* Space below the list */
+}
+
+li {
+    margin: 10px 0; /* Space between list items */
+}
+
+button {
+    display: inline-block; /* Inline block for button */
+    padding: 10px 20px; /* Padding inside the button */
+    margin-top: 20px; /* Space above the button */
+    background-color: var(--main-color); /* Use the defined main color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: var(--second-main-color); /* Change to secondary main color on hover */
+}
+
+/* Dialog Box Styles */
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color:white; /* Black w/ opacity */
+}
+
+.dialog-content {
+    background-color:var(--bg-color);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block; /* Stack labels vertically */
+    margin: 10px 0; /* Space between labels */
+}
+
+button[type="submit"] {
+    margin-top: 20px; /* Space above the submit button */
+    background-color: var(--main-color); /* Use the defined main color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 20px; /* Padding inside the button */
+}
+
+footer {
+    background:rgb(18, 190, 212);
+    color: rgb(242, 243, 243);
+    padding: 60px 12% 20px;
+}
+
+
+
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(245, 239, 239, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 15px;
+}
+
+.footer-bottom a {
+    color: var(--white);
+    margin: 0 15px;
+    opacity: 0.8;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Small Screens (up to 420px) */
+@media (max-width: 720px) {
+    .container {
+        max-width: 90%; /* Adjust container width */
+        padding: 20px; /* Reduce padding */
+    }
+
+    h1 {
+        font-size: 1.9rem; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size:1.3rem; /* Adjust subheading size */
+    }
+
+    li{
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
+
+/* Medium Screens (421px to 1028px) */
+@media (min-width: 300px) and (max-width: 720px) {
+    .container {
+        max-width: 90%; /* Adjust container width */
+        padding: 30px; /* Adjust padding */
+    }
+
+    
+    h1 {
+        font-size: 1rem; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size:0.9rem; /* Adjust subheading size */
+    }
+
+    li{
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.8rem; /* Adjust paragraph size */
+    }
+
+    button {
+        font-size: 15px; /* Adjust button font size */
+        padding: 10px 18px; /* Adjust button padding */
+    }
+}
+
+/* Large Screens (1029px and above) */
+@media (min-width: 1029px) {
+    .container {
+        max-width: 75%; /* Default container width */
+        padding: 50px; /* Default padding */
+    }
+
+    h1 {
+        font-size: var(--big-font); /* Use default big font size */
+    }
+
+    h2 {
+        font-size: var(--h2-font); /* Use default H2 font size */
+    }
+
+    p {
+        font-size: var(--p-font); /* Use default paragraph font size */
+    }
+
+    button {
+        font-size: 16px; /* Use default button font size */
+        padding: 10px 20px; /* Use default button padding */
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+    .dialog-content {
+        width: 90%;
+        padding: 20px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Devices */
+@media (min-width: 420px) and (max-width: 768px) {
+    .dialog-content {
+        width: 80%;
+        padding: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dialog-content {
+        width: 70%;
+        padding: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Large Devices */
+@media (min-width: 1025px) {
+    .dialog-content {
+        width: 50%;
+        padding: 50px;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
