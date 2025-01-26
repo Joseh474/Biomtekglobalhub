@@ -204,24 +204,24 @@ section{
 /* Services Container Styles */
 .services-container {
     display: flex;
-    justify-content: space-around; /* Space out service blocks */
-    margin-top: 30px; /* Space above the services */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around; 
+    margin-top: 30px; 
+    flex-wrap: wrap; 
 }
 
 /* Service Block Styles */
 .service-block {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the block */
-    margin: 10px; /* Margin around the block */
-    flex: 1 1 300px; /* Flex properties for responsiveness */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: transform 0.3s ease; /* Transition for hover effect */
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .service-block:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px); 
 }
 
 /* Service Block Heading Styles */
@@ -274,10 +274,6 @@ section{
     margin: 0 0 8px;
     animation-delay: 0.5s; 
 }
-
-
-
-
 
 
 
@@ -1727,7 +1723,7 @@ header.sticky {
         }
 
         #home {
-            padding: 20px 10%; 
+            padding: 10px 10%; 
         }
 
         #about {
