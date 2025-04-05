@@ -1,713 +1,1238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>biomtekglobal- Medical Equipment Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0
-,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>BIOMTEK - Arduino & Electronics Components</title>
+    <link rel="stylesheet" href="arduino.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-<!-- Header Section -->
+
+   <!-- Updated Header with Login/Register Links -->
 <header>
-
-    <div class="header-top">
-        <a href="#" class="logo">
-            <span class="biom">BIOM</span><span class="tek">TEK</span><br>
-            <span class="global">GLOBAL</span>
-        </a>
-        <br>
-        <div class="search-container">
-            <input 
-                type="text" 
-                id="search-bar" 
-                placeholder="Search for products..." 
-                aria-label="Search for products"
-            />
-            <button onclick="searchProducts()" aria-label="Search">
-                <i class='bx bx-search'></i> Search
-            </button>
+    <!-- Top Bar with Company Name and Social Media -->
+    <div class="top-bar">
+        <div class="company-name">BIOMTEK ELECTRONICS</div>
+        <div class="user-auth">
+            <a href="#" id="loginLink">Login</a>
+            <span>|</span>
+            <a href="#" id="registerLink">Register</a>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 
-    <!-- Navigation bar -->
-    <ul class="navlist">
-        <li><a href="#home" class="active"style="color:white;"><i class='bx bx-home'></i>Home</a></li>
-        <li><a href="#about"><i class='bx bxs-user'></i>About us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="community/community.html">Community</a></li>
-        <li><a onclick="loadPage('arduino/arduino.html')">Arduino</a></li>
-        <li class="dropdown-menu reveal">
-            <a href="#products">Products<i class='bx bxs-chevron-down-circle'></i></a>
-            <ul class="dropdown">
-                <li><a href="#Operating Theatre Equipment">Theatre Equipment</a></li>
-                <li><a href="#Laundry and CSSD Equipment">Laundry and CSSD Equipment</a></li>
-                <li><a href="#laboratory equipment">Laboratory Equipment</a></li>
-                <li><a href="#Radiology equipment">Imaging Equipment</a></li>
-                <li><a href="#Dental Unit">Dental Unit</a></li>
-                <li><a href="#Ward and Outpatient Physiotherapy">Ward and Outpatient Equipment</a></li>
-                <li><a href="#accessiories, reagents, spare parts and consumables">Accessories</a></li>
-            </ul>
-        </li>
-        <li><a href="#contact">Contact us</a></li>
-    </ul>
-
-    <div class="toggle"></div>
-    <div class="bx bx-menu" id="menu-icon"></div>
-</header>
-
-<!-- Home Section -->
-<section class="home reveal" id="home">
-
-    <div class="home-text">
-        <div class="slide">
-            <h1 class="typing-h1"><span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h1>
-            <p>
-                With an experience in distribution of medical equipment, accessories, and spare parts,
-                BIOMTEK is dedicated to delivering quality products and services to the healthcare system. 
-                Additionally, the BIOMTEK Electronics Hub specializes in providing Arduino boards, sensors,
-                and other electronics components for research projects, empowering innovation in engineering and technology field.
-            </p>
-            <div class="button-container">
-                <button class="btn" onclick="loadPage('arduino/arduino.html')">Electronics</button>
-                <button class="btn" onclick="loadPage('community/community.html')">Community</button>
-            </div>
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#" class="logo">
+                <span class="biom">BIOM</span><span class="tek">TEK</span><br>
+                <span class="global">GLOBAL</span>
+            </a>
         </div>
-    </div>
-    <div class="background-animation"></div>
-
-</section>
-
-<div id="loader" style="display: none;">
-    <div class="loader-animation">
-        <div class="pulse-circle" style="background-color: blue;"></div>
-        <div class="pulse-circle" style="background-color:#ff4d05;"></div>
-        <div class="pulse-circle" style="background-color: blue;"></div>
-    </div>
-    <h2>Loading...</h2>
-</div>
-
-     <!-- About Us Section -->
-     <section class="about reveal" id="about">
-        <h2>About <span>Us</span></h2>
         
-        <div class="about-wrapper">
-            <div class="about-text">
-                <div class="about-info">
-                    <i class='bx bx-time-five'></i>
-                    <h3>Experience & Expertise</h3>
-                    <p>With over two years of dedicated experience in medical equipment distribution, we deliver high-quality products and services tailored to healthcare needs.</p>
-                </div>
-
-                <div class="about-info">
-                    <i class='bx bx-globe'></i>
-                    <h3>Global Partnerships</h3>
-                    <p>Our strategic partnerships with leading companies in China enable us to provide reliable and innovative healthcare solutions designed to enhance patient care.</p>
-                </div>
-
-                <div class="about-info">
-                    <i class='bx bx-check-shield'></i>
-                    <h3>Quality Commitment</h3>
-                    <p>We maintain the highest standards in every aspect of our operations, from sourcing to customer service, ensuring healthcare facilities have access to the best tools and technologies.</p>
-                </div>
+        <button class="mobile-menu-button" aria-label="Menu" id="mobileMenuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="/about" class="nav-link">About Us</a>
+            <a href="/products" class="nav-link">Products</a>
+            <a href="/services" class="nav-link">Services</a>
+            <a href="/contact" class="nav-link">Contact Us</a>
+        </div>
+        
+        <div class="nav-actions">
+            <div class="search-container">
+                <button class="search-toggle" id="searchToggle" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                
             </div>
-
-            <div class="about-image">
-                <img src="img/add 2.jpg" alt="Medical Equipment Professional" />
-                <div class="stats-overlay">
-                    <div class="stats">
-                       
-                        <div class="stat-item">
-                            <span>100+</span>
-                            <p>Products</p>
+            
+            <div class="cart-container">
+                <button id="cartButton" class="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="cart-dropdown" id="cartDropdown">
+                    <div class="cart-header">
+                        <h4>Your Cart</h4>
+                        <button class="close-cart" id="closeCart">&times;</button>
+                    </div>
+                    <div class="cart-items">
+                        <div class="empty-cart">Your cart is empty</div>
+                    </div>
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <span>Total:</span>
+                            <span class="total-amount">$0.00</span>
                         </div>
-                        <div class="stat-item">
-                            <span>50+</span>
-                            <p>Community Members</p>
-                        </div>
+                        <button class="checkout-button" id="checkoutButton">Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+</header>
 
-
-    <!-- Expand Your Sales Section -->
-<section class="expand-sales reveal" id="expand-sales">
-    <div class="expand-sales-container">
-        <div class="expand-sales-content">
-            <h2>Expand Your Sales with <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h2>
-            <h3>Partner with BIOMTEK for Equipment Sales</h3>
-            <p>Boost your medical equipment sales by partnering with us. We provide a comprehensive platform to showcase and sell your equipment.</p>
-            
-            <ul class="sales-features">
-                <li><i class="bx bx-check-circle"></i>Wide Market Reach</li>
-                <li><i class="bx bx-line-chart"></i>Increased Sales Potential</li>
-                <li><i class="bx bx-support"></i>Professional Support</li>
-                <li><i class="bx bx-shield"></i>Trusted Partnership</li>
-            </ul>
-
-            <div class="expand-sales-instructions">
-                <p>Send us your equipment specifications including:</p>
-                <ul class="sales-features">
-                    <li><i class="bx bx-image"></i>Clear Product Images</li>
-                    <li><i class="bx bx-list-ul"></i>Detailed Specifications</li>
-                    <li><i class="bx bx-dollar"></i>Pricing Information</li>
-                </ul>
+<!-- Login Modal -->
+<div class="auth-modal" id="loginModal">
+    <div class="auth-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
             </div>
-
-            <p>Experience ease of partnering with BIOMTEK - Get in touch today and let's grow your sales together.</p>
-            
-            <button class="contact-bttn">
-                <i class="bx bx-envelope"></i>
-                <a href="mailto:sales@biomtekglobal.co.ke">sales@biomtekglobal.co.ke</a>
-            </button>
-        </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="auth-button">Login</button>
+            <p class="auth-switch">Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+        </form>
     </div>
-</section>
-
-    <!-- Operating Theatre Equipment Section -->
-<section class="Operating Theatre Equipment, reveal" id="Operating Theatre Equipment">
-    <div class="main-text">  
-        <h2>Our <span>Products</span></h2>
-        <h2>Operating Theatre Equipment</h2>
-        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/OPERATING TABLE 2.jpg','Operating Table', 'length: 2000mm, Trendelenburg: 25 degrees, Backsection:20 degrees, Lateral unit: 20 degrees, Head section: +70degrees, Head section: ±30 degrees -55 degrees stabndby backup battery')">
-            <img src="img/OPERATING TABLE 2.jpg" alt="Operating Table">
-            <h5>Operating Table</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/OPERATING LIGHT.jpg', 'Operating Light', 'Intesity: 160000 +- 10%, Diameter of light:500mm, Size of light field, Powersupply 220V|50HZ AC, Control; Touchpanel')">
-            <img src="img/OPERATING LIGHT.jpg" alt="Operating Light">
-            <h5>Operating Light</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/ANAESTHETIA.jpg', 'Anesthesia Machine', 'Features Integrated breathing circuit with APL valve, excellent tightness.   Replacing drive bellow is NOT required when operating adult/pediatric anesthesia.    Applied with 2 high-precision vaporizers.  10.1 inch touch screen with no dead space.  Real-time detection for loops, Paw, BPM, VT and compliance.   Comprehensive monitoring capabilities include ventilation parameters monitoring,preset parameters, alarm indication and breathing waveform monitoring.  Head light.   Altitude compensation function.    ACGO available to connect with T/Bain circuit for open operation. Yoke system with up to 3 back up cylinders (A type with 11 L size)(Optional).')">
-            <img src="img/ANAESTHETIA.jpg" alt="Anesthesia Machine">
-            <h5>Anesthesia Machine</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/MONITOR MAIN.jpg', 'Patient Monitor', ' Model .MPM-IT.  Heart rate : 15-300 BPM(adult ): 15-350.  BPM (Neonatal).    Resolution:1 BPM.    Accuracy ±1%')">
-            <img src="img/MONITOR MAIN.jpg" alt="Patient Monitor">
-            <h5>Patient Monitor</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/diaTH.jpg', 'Diathermy Unit', '')">
-            <img src="img/diaTH.jpg" alt="Diathermy Unit">
-            <h5>Diathermy Unit</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-    </div>
-</section>
-
-
-
-
-    <!-- Laboratory Equipment Section -->
-<section class="laboratory equipments reveal" id="laboratory equipment">
-    <div class="main-text">  
-        <h2>Laboratory Equipment</h2>
-        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/MICROSCOPE 2.jpg', 'Microscope', 'Microscope     Model : MSC-BH102B     Inclined at 45° Binocular head     Interpupillary (55-75mm)')">
-            <img src="img/MICROSCOPE 2.jpg" alt="Microscope">
-            <h5>Microscope</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/FRIDGE 1.jpg', 'Fridge', )">
-            <img src="img/FRIDGE 1.jpg" alt="Fridge">
-            <h5>Fridge</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/CENTRIFUGE MAIN.jpg', 'Centrifuge', '.CfG-6M        .Speed (rmp) :6000        .Max RCF(xg): 2000       . Capacity (standard rotor):8×1.5/2.0/0.5/0.2ml')">
-            <img src="img/CENTRIFUGE MAIN.jpg" alt="Centrifuge">
-            <h5>Centrifuge</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-       
-        <div class="row" onclick="showModal('img/BIOCHM ANA.jpg', 'Biochemistry Analyzer', 'Used for conducting biochemical analysis of blood and other body fluids.')">
-            <img src="img/BIOCHM ANA.jpg" alt="Biochemistry Analyzer">
-            <h5>Biochemistry Analyzer</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/BIOSAFETY CABINET 2.jpg', '.BSC-1-800       .Work surface Height 750mm       .Sound emission ≤62dB(A)       .Illuminating lamp ; LED type       .Illumination ≥900 LX        . Airflow velocity: 0.5~1m/s speed adjustable         .Can optional Base stand')">
-            <img src="img/BIOSAFETY CABINET 2.jpg" alt="Biosafety Cabinet">
-            <h5>Biosafety Cabinet</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-    </div>
-</section>
-
-
-
-
-<!-- Modal for Full Product Display -->
-<div id="productModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" class="modal-content">
-    <div class="modal-body">
-        <!-- Navigation buttons and image will be added here dynamically --> </div>
-    <div id="modalCaption"></div>
-    <p id="modalDescription"></p>
 </div>
 
-    <!-- Laundry and CSSD Equipment Section -->
-<section class="Laundry and CSSD Equipment reveal" id="Laundry and CSSD Equipment">
-    <div class="main-text">  
-        <h2>Laundry and CSSD Equipment</h2>
-        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/WASHING MACHINE.jpg', 'Washing Machine', 'Used for cleaning hospital linens and garments to maintain hygiene standards.')">
-            <img src="img/WASHING MACHINE.jpg" alt="Washing Machine">
-            <h5>Washing Machine</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/AUTOCLAVE 2.jpg', 'Autoclave', '.ST-P18       . Volume 18 L       .Chamber size (∅×H) (mm)        .Rated working temperature (C°) 126')">
-            <img src="img/AUTOCLAVE 2.jpg" alt="Autoclave">
-            <h5>Autoclave</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/pressure .jpg', 'Pressure steam sterilizer', '')">
-            <img src="img/pressure .jpg" alt="Washing Machine">
-            <h5>Pressure steam sterilizer </h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/bench top auto.jpg', 'Bench-top Autoclave', '')">
-      
-    </div>
-</section>
-
-
-    <!-- Ward and Outpatient Physiotherapy Section -->
-<section class="ward-outpatient-physiotherapy reveal" id="ward-outpatient-physiotherapy">
-    <div class="main-text">  
-        <h2>Medical Furniture, Ward, Outpatient, and Physiotherapy</h2>
-        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/oxygen cons.jpg', 'Oxygen Concentrator', '2 oxygen outlet with controllable flowmeter.        Audible and visual alarms for low oxygen concentration (<82%) and powersupply failure.               Audible and visual alarms for high temperature, no flow rate and low/high pressure.                Power efficiency < 70 W/L/min.')">
-            <img src="img/oxygen cons.jpg" alt="Oxygen Concentrator">
-            <h5>Oxygen Concentrator</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/ULTRASOUND IMAGING.jpg', '')">
-            <img src="img/ULTRASOUND IMAGING.jpg" alt="Ultrasound Therapy">
-            <h5>Ultrasound Therapy</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/sunction machine.jpg', 'Power consumption: 120W                Maximum negative pressure: ≥0.09 MPa                Pump rate: ≥20 L/min        Noise: ≤60 dB                Continuous Working Time: 0-30 min                Bottle volume: 2500 ml, 2 pcs')">
-            <img src="img/sunction machine.jpg" alt="Suction Machine">
-            <h5>Suction Machine</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/BED 1.jpg', 'Patient Bed', '')">
-            <img src="img/BED 1.jpg" alt="Patient Bed">
-            <h5>Patient Bed</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/EQ6B.jpg', 'Examination Table', '')">
-            <img src="img/EQ6B.jpg" alt="Examination Table">
-            <h5>Examination Table</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-    </div>
-</section>
-
-   
-
-   <!-- Critical Care Equipment Section -->
-<section class="critical-care-equipment reveal" id="critical-care-equipment">
-    <div class="main-text">  
-        <h2>Critical Care Equipment</h2>
-        <p>If you  are unable to find your reference, contact our team with your specific Inquiry/inquiries </p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/vent2.jpg', 'Ventilator', 'Assists or replaces a patient\'s breathing function by providing controlled airflow to their lungs.')">
-            <img src="img/vent2.jpg" alt="Ventilator">
-            <h5>Ventilator</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/dial.jpg', 'Dialysis Machine', 'Removes waste products and excess fluids from the blood when the kidneys are not functioning properly.')">
-            <img src="img/dial.jpg" alt="Dialysis Machine">
-            <h5>Dialysis Machine</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/sunction machine.jpg', 'Suction Machine', 'Removes fluids such as mucus or blood from a patient\'s airway to maintain a clear breathing passage.')">
-            <img src="img/sunction machine.jpg" alt="Suction Machine">
-            <h5>Suction Machine</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/BED 5.jpg', 'ICU Bed', 'An adjustable bed designed for critical care patients, providing comfort and ease of access for caregivers.')">
-            <img src="img/BED 5.jpg" alt="ICU Bed">
-            <h5>ICU Bed</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/bed panel.jpg', 'Bed Panel', 'Provides monitoring and control of medical equipment connected to the patient, such as oxygen and suction devices.')">
-            <img src="img/bed panel.jpg" alt="Bed Panel">
-            <h5>Head bed units</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-    </div>
-</section>
-
-    <!-- Accessories Section -->
-<section class="accessories-reagents-spare-parts-consumables reveal" id="accessories-reagents-spare-parts-consumables">
-    <div class="main-text">  
-        <h2>Accessories, Reagents, Spare Parts, and Consumables</h2>
-        <p>
-            We offer a wide range of medical accessories, spare parts, reagents, and consumables for all types of new or used medical equipment. 
-            Contact our team for specific inquiries.
-        </p>
-        <p> Large range of spare parts compatible with leading brands.</p>
-    </div>
-    <div class="product-content">
-        <div class="row" onclick="showModal('img/air compresor.jpg')">
-            <img src="img/air compresor.jpg" alt="Chest Electrode">
-            <h5>AIR COMPRESOR</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/CLAMP.jpg')">
-            <img src="img/CLAMP.jpg" alt="Clamp">
-            <h5>CLAMP</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/O2 CELLS.jpg')">
-            <img src="img/O2 CELLS.jpg" alt="O2 Cells">
-            <h5>O2 CELLS</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/NIBP.jpg', 'NIBP', '')">
-            <img src="img/NIBP.jpg" alt="NIBP">
-            <h5>NIBP CUFF</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/ELECTRODE.jpg', 'ELECTRODE', '')">
-            <img src="img/ELECTRODE.jpg" alt="Electrode">
-            <h5>ELECTRODE</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/PROPE ADDDDDDDTER.jpg')">
-            <img src="img/PROPE ADDDDDDDTER.jpg" alt="End Connectors">
-            <h5>END CONNECTORS</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-
-        <div class="row" onclick="showModal('img/probe.jpg')">
-            <img src="img/probe.jpg" alt="probe">
-            <h5>PROBE</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/Bp air preassure pumb.jpg')">
-            <img src="img/Bp air preassure pumb.jpg" alt="Electrode">
-            <h5>BLOOD PRESSURE AIR PUMP</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/vacum pumb.jpg')">
-            <img src="img/vacum pumb.jpg" alt="End Connectors">
-            <h5>VACUM PUMP</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-
-        <div class="row" onclick="showModal('img/SAFETY VALVE .jpg')">
-            <img src="img/SAFETY VALVE .jpg" alt="Electrode">
-            <h5>PRESSURE GUAGE</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        
-
-        <div class="row" onclick="showModal('img/OXYGEN REGULATOR.jpg')">
-            <img src="img/OXYGEN REGULATOR.jpg" alt="probe">
-            <h5>OXYGEN REGULATOR</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/HEATING ELEMENT.jpg')">
-            <img src="img/HEATING ELEMENT.jpg" alt="Electrode">
-            <h5>HEATING ELEMENT</h5>
-             <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-        <div class="row" onclick="showModal('img/9V BATTERY.jpg')">
-            <img src="img/9V BATTERY.jpg" alt="End Connectors">
-            <h5>9 V BATTERY</h5>
-           <a href="https://wa.me/+254745284565" class="inquire-btn">
-                        <i class="fab fa-whatsapp"></i> Inquire Now
-                    </a>
-        </div>
-    </div>
-</section>
-
-   
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2>Services</h2>
-        <div class="service right">
-            <h3>After sale services</h3>
-            <p>We offer free installation and user training.</p>
-        </div>
-       
-        <div class="maintenance-services">
-            
-            <div class="text-content">
-                <h3>Medical Equipment Maintenance Services</h3>
-                <p>With a team of engineer and certified technicians, biomtek is equiped to handle broad range of medical equipment support system </p>
-                <p>We offer the following services;</p>
-                
-                 <strong>
-                    <ol>
-                        <li>1.  Corrective repairs</li>
-                        <li>2.  Preventive maintainance</li>
-                        <li>3.  Refurbishment and upgrading medical equipment with implementation of quality and safety standards</li>
-                    </ol>
-                  </strong>
-
-                  <br><br><br>
-
-                  <p>Contact us to learn how we can support your hospital maintanance requirement.</p>
+<!-- Registration Modal -->
+<div class="auth-modal" id="registerModal">
+    <div class="auth-content">
+        <span class="close-modal">&times;</span>
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="registerName">Full Name</label>
+                <input type="text" id="registerName" required>
             </div>
-            <div class="image-content">
-                <img src="img/service 2.jpg" alt="Medical Equipment Maintenance" />
-               
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="registerConfirm">Confirm Password</label>
+                <input type="password" id="registerConfirm" required>
+            </div>
+            <button type="submit" class="auth-button">Register</button>
+            <p class="auth-switch">Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+        </form>
+    </div>
+</div>
 
+<!-- Checkout Restricted Modal -->
+<div class="auth-modal" id="restrictedModal">
+    <div class="auth-content">
+        <span class="close-modal">&times;</span>
+        <h2>Login Required</h2>
+        <p>You need to be logged in to complete your purchase.</p>
+        <div class="auth-buttons">
+            <button class="auth-button" id="goToLogin">Login</button>
+            <button class="auth-button secondary" id="goToRegister">Register</button>
+        </div>
+    </div>
+</div>
+
+    <main>
+        <section id="hero" class="hero-banner">
+            <div class="hero-banner-image">
+                <img src="arduino-education.jpg" alt="Arduino Education">
+                <div class="hero-banner-overlay"></div>
+            </div>
+            <div class="hero-banner-content container">
+                <div class="hero-text">
+                    <h1>Arduino & Electronics Components</h1>
+                    <p class="intro">Welcome to <span style="color:blue;">BIOM</span><span
+                            style="color: #ff4d05;">TEK</span> Electronics Hub! Explore our wide range of Arduino
+                        boards, sensors, microcontrollers, and other electronics components designed for students,
+                        researchers, and hobbyists.</p>
+                    <p class="slogan">Building the Future, Powered by <span style="color:blue;">BIOM</span><span
+                            style="color: #ff4d05;">TEK</span></p>
+                    <div class="hero-buttons">
+                        <button class="cta-button">Explore Products</button>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-features container">
+                <div class="feature-point">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Educational Kits</span>
+                </div>
+                <div class="feature-point">
+                    <i class="fas fa-tools"></i>
+                    <span>Professional Tools</span>
+                </div>
+                <div class="feature-point">
+                    <i class="fas fa-robot"></i>
+                    <span>Robotics Components</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <!-- Image Column -->
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                     alt="BIOMTEK team working on electronics projects" 
+                     class="about-img">
+                <div class="image-overlay">
+                    <p>Innovating since 2020</p>
+                </div>
             </div>
             
-        </div>
-        <button class="contact-btn"><a href="mailto:info@biomtekglobal.co.ke">contact us</a></button>
-    </section>
-
-    
-
-    <!-- Compact Contact Section with Unique Social Icon Classes -->
-<section class="contact reveal" id="contact">
-    <div class="contact-content">
-        <h2>Contact <span>Us</span></h2>
-        <p>We're here to assist you. Reach out via phone, email, or social media:</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class='bx bx-phone'></i>
-                <p>+254 745 284 565 | +254 790 235 311</p>
-            </div>
-            <p>For general inquiries;</p>
-            <div class="contact-item">
-                <i class='bx bx-envelope'></i>
-                <p><a href="mailto:info@biomtekglobal.co.ke">info@biomtekglobal.co.ke</a></p>
-            </div>
-            <p>Sales inquiries;</p>
-            <div class="contact-item">
-                <i class='bx bx-envelope'></i>
-                <p><a href="mailto:sales@biomtekglobal.co.ke">sales@biomtekglobal.co.ke</a></p>
-            </div>
-            <div class="contact-social">
-                <a target="_blank" href="mailto:infobiomtek@gmail.com"  class="icon-gmail"><i class='bx bxl-gmail'></i></a>
-                <a target="_blank" href="https://x.com/BIOMTEK?t=iQcGA5199x-TF_SaHbhnKw&s=08" class="icon-twitter"><i class='bx bxl-twitter'></i></a>
-                <a target="_blank" href="https://www.instagram.com/biomtek?igsh=YzljYTk1ODg3Zg==" class="icon-instagram"><i class='bx bxl-instagram'></i></a>
-                <a target="_blank" href="https://wa.me/+254790235311"  class="icon-whatsapp"><i class='bx bxl-whatsapp'></i></a>
-                <a target="_blank" href="#" class="icon-linkedin"><i class='bx bxl-linkedin'></i></a>
+            <!-- Content Column -->
+            <div class="about-content">
+                <h2 class="section-title">About <span class="biom">BIOM</span><span class="tek">TEK</span></h2>
+                <p class="lead">Empowering innovators with quality electronic components and expert support</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-microchip"></i>
+                        <div>
+                            <h3>Quality Components</h3>
+                            <p>We source only the highest quality Arduino boards, sensors, and electronic components from trusted manufacturers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h3>Education Focus</h3>
+                            <p>Special discounts for students and educators to make electronics education accessible to all.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h3>Expert Support</h3>
+                            <p>Our team of engineers provides technical support to help you succeed with your projects.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mission-statement">
+                    <h3>Our Mission</h3>
+                    <p>At BIOMTEK, we believe in democratizing electronics innovation. Whether you're a student building your first robot or a researcher developing cutting-edge biomedical devices, we provide the tools and knowledge you need to bring your ideas to life.</p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="/products" class="btn btn-primary">Explore Products</a>
+                    <a href="/contact" class="btn btn-secondary">Contact Us</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- CSS Styles for About Section -->
 
-    <!-- Unique Benefits Section -->
-    <section class="unique-benefits reveal">
-        <h2>Discover Our Unique Product Benefits</h2>
-        <p>At <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span>., we pride ourselves on offering quality medical equipment and accessories.
-            Our products are designed to enhance patient care and operational efficiency in healthcare systems worldwide.</p>
-        <div class="benefits-grid">
-            <div class="benefit-item">
-                <h3>Quality Assurance</h3>
-                <p>Our products meets the standards of quality and safety, complying with <span>ISO, FDA AND CE</span> regulations.
-                     Our services adheres to industry standards and regulations.</p>
+
+
+
+        <!-- Product Categories Section -->
+        <section id="product-categories">
+            <div class="category-container">
+                <!-- Arduino Boards Category -->
+                <div class="category-section">
+                    <h2 class="category-title">Arduino Boards</h2>
+                    <div class="category-description">
+                        <p>Professional-grade Arduino microcontroller boards for your electronics projects.</p>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Arduino Uno R3 -->
+                        <div class="product-card" data-product-id="uno-r3">
+                            <div class="product-image">
+                                <img src="Arduino Uno R3.jpg" alt="Arduino Uno R3">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Uno R3</h3>
+                                <p class="price">Ksh 1,400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>ATmega328P microcontroller</li>
+                                        <li>14 digital I/O pins</li>
+                                        <li>6 analog inputs</li>
+                                        <li>USB programming interface</li>
+                                        <li>16 MHz clock speed</li>
+                                        <li>Operating voltage: 5V</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Arduino Nano -->
+                        <div class="product-card" data-product-id="nano">
+                            <div class="product-image">
+                                <img src="Arduino Nano.jpg" alt="Arduino Nano">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Nano</h3>
+                                <p class="price">Ksh 1,100</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Compact form factor</li>
+                                        <li>ATmega328 microcontroller</li>
+                                        <li>Breadboard-friendly design</li>
+                                        <li>Mini-B USB connection</li>
+                                        <li>Same functionality as Uno</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Arduino Pro Mini -->
+                        <div class="product-card" data-product-id="pro-mini">
+                            <div class="product-image">
+                                <img src="Arduino Pro mini.jpg" alt="Arduino Pro Mini">
+                            </div>
+                            <div class="product-info">
+                                <h3>Arduino Pro Mini</h3>
+                                <p class="price">Ksh 700</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>ATmega328P microcontroller</li>
+                                        <li>Minimalist design</li>
+                                        <li>Custom connector options</li>
+                                        <li>Perfect for embedded projects</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sensors Section -->
+                <div class="category-section">
+                    <h2 class="category-title">Sensors</h2>
+                    <div class="category-description">
+                        <p>Comprehensive range of sensors for all your measurement and detection needs.</p>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Temperature Sensors -->
+                        <div class="product-card" data-product-id="lm35dz">
+                            <div class="product-image">
+                                <img src="Lm 35 temperature sensor.jpg" alt="LM35DZ Temperature Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>LM35DZ Temperature Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Precision temperature measurement</li>
+                                        <li>Linear output</li>
+                                        <li>Calibrated in Celsius</li>
+                                        <li>Operating range: -55°C to 150°C</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- DHT11/DHT22 -->
+                        <div class="product-card" data-product-id="dht">
+                            <div class="product-image">
+                                <img src="DHT11 humidity and temperature sensor.jpg" alt="DHT11/DHT22 Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>DHT11/DHT22 Sensor</h3>
+                                <p class="price">Ksh 300</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Combined temperature & humidity</li>
+                                        <li>Digital output</li>
+                                        <li>Pre-calibrated</li>
+                                        <li>Easy to interface</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- PIR Motion Sensor -->
+                        <div class="product-card" data-product-id="pir">
+                            <div class="product-image">
+                                <img src="PIR motion sensor.jpg" alt="PIR Motion Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>PIR Motion Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Passive infrared detection</li>
+                                        <li>Adjustable sensitivity</li>
+                                        <li>Detection range: up to 7m</li>
+                                        <li>Wide detection angle: 120°</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- LDR Light Sensor -->
+                        <div class="product-card" data-product-id="ldr">
+                            <div class="product-image">
+                                <img src="LDR.jpg" alt="Photoresistor (LDR)">
+                            </div>
+                            <div class="product-info">
+                                <h3>Photoresistor (LDR)</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Light-dependent resistance</li>
+                                        <li>Analog output</li>
+                                        <li>Wide sensitivity range</li>
+                                        <li>Ideal for light detection</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- MQ Gas Sensor -->
+                        <div class="product-card" data-product-id="mq">
+                            <div class="product-image">
+                                <img src="mq.jpg" alt="MQ Series Gas Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>MQ Series Gas Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Multiple gas detection</li>
+                                        <li>High sensitivity</li>
+                                        <li>Fast response time</li>
+                                        <li>Analog output</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Sound Sensor -->
+                        <div class="product-card" data-product-id="sound">
+                            <div class="product-image">
+                                <img src="mic module.jpg" alt="Microphone Module">
+                            </div>
+                            <div class="product-info">
+                                <h3>Microphone Module</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Sound level detection</li>
+                                        <li>Adjustable sensitivity</li>
+                                        <li>Digital & analog output</li>
+                                        <li>Built-in amplifier</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Fingerprint Sensor -->
+                        <div class="product-card" data-product-id="fingerprint">
+                            <div class="product-image">
+                                <img src="gt5sensor.jpg" alt="GT511C1R Fingerprint Scanner">
+                            </div>
+                            <div class="product-info">
+                                <h3>GT511C1R Fingerprint Scanner</h3>
+                                <p class="price">Ksh 1,500</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>32-bit CPU</li>
+                                        <li>Stores up to 20 fingerprints</li>
+                                        <li>360° recognition</li>
+                                        <li>UART interface</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Pulse Sensor -->
+                        <div class="product-card" data-product-id="pulse">
+                            <div class="product-image">
+                                <img src="pulse sensor.jpg" alt="Pulse Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Pulse Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Optical heart rate detection</li>
+                                        <li>Noise cancellation</li>
+                                        <li>Plug-and-play design</li>
+                                        <li>Arduino compatible</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+
+                        <!-- Pulse Sensor -->
+                        <div class="product-card" data-product-id="pulse">
+                            <div class="product-image">
+                                <img src="pulse2.jpg" alt="Pulse Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Pulse Sensor</h3>
+                                <p class="price">Ksh 400</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Optical heart rate detection</li>
+                                        <li>Noise cancellation</li>
+                                        <li>Plug-and-play design</li>
+                                        <li>Arduino compatible</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- MAX30102 Sensor -->
+                        <div class="product-card" data-product-id="max30102">
+                            <div class="product-image">
+                                <img src="max ox.jpg" alt="MAX30102 Pulse Oximeter">
+                            </div>
+                            <div class="product-info">
+                                <h3>MAX30102 Pulse Oximeter</h3>
+                                <p class="price">Ksh 300</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Blood oxygen monitoring</li>
+                                        <li>Heart rate measurement</li>
+                                        <li>I2C interface</li>
+                                        <li>Integrated LED drivers</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-card" data-product-id="muscle-sensor">
+                            <div class="product-image">
+                                <img src="muscle.jpg" alt="Muscle Sensor">
+                            </div>
+                            <div class="product-info">
+                                <h3>Muscle Sensor</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Measures muscle activity</li>
+                                        <li>High sensitivity and precision</li>
+                                        <li>Compact and lightweight design</li>
+                                        <li>Analog output for easy interfacing</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- More sensors... -->
+                    </div>
+                </div>
+
+                <!-- Controllers Section -->
+                <div class="category-section">
+                    <h2 class="category-title">Controllers & Modules</h2>
+                    <div class="product-grid">
+
+                        <!-- L298N Motor Driver -->
+                        <div class="product-card" data-product-id="l298n">
+                            <div class="product-image">
+                                <img src="L298N Motor Drive.jpg" alt="L298N Motor Driver">
+                            </div>
+                            <div class="product-info">
+                                <h3>L298N Motor Driver</h3>
+                                <p class="price">Ksh 500</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Dual H-Bridge motor driver</li>
+                                        <li>Controls DC motors and stepper motors</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- 5V Relay Module -->
+                        <div class="product-card" data-product-id="5v-relay">
+                            <div class="product-image">
+                                <img src="relay.jpg" alt="5V Relay Module">
+                            </div>
+                            <div class="product-info">
+                                <h3>5V Relay Module</h3>
+                                <p class="price">Ksh 250</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Allows Arduino to control high-voltage devices</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- HC-05 Bluetooth Module -->
+                        <div class="product-card" data-product-id="hc-06">
+                            <div class="product-image">
+                                <img src="HC-05 Bluetooth Module.jpg" alt="HC-05 Bluetooth Module">
+                            </div>
+                            <div class="product-info">
+                                <h3>HC-06 Bluetooth Module</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Facilitates wireless communication between Arduino and Bluetooth-enabled
+                                            devices</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- HC-06 Bluetooth Module -->
+                        <div class="product-card" data-product-id="hc-06">
+                            <div class="product-image">
+                                <img src="HC-05 Bluetooth Module.jpg" alt="HC-05 Bluetooth Module">
+                            </div>
+                            <div class="product-info">
+                                <h3>HC-05 Bluetooth Module</h3>
+                                <p class="price">Contact for Price</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Facilitates wireless communication between Arduino and Bluetooth-enabled
+                                            devices</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Electronic Components Section -->
+                <div class="category-section">
+                    <h2 class="category-title">Electronic Components</h2>
+                    <div class="product-grid">
+
+                        <!-- Resistors -->
+                        <div class="product-card" data-product-id="resistors">
+                            <div class="product-image">
+                                <img src="resistor.jpg" alt="Resistors">
+                            </div>
+                            <div class="product-info">
+                                <h3>Resistors</h3>
+                                <p class="price">KSH 10 each</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Essential for voltage and current control</li>
+                                        <li>Various resistance values available</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Capacitors -->
+                        <div class="product-card" data-product-id="capacitors">
+                            <div class="product-image">
+                                <img src="capasitor.jpg" alt="Capacitors">
+                            </div>
+                            <div class="product-info">
+                                <h3>Capacitors</h3>
+                                <p class="price">KSH 20 each</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Stores and releases electrical energy</li>
+                                        <li>Available in various capacitance values</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Diodes -->
+                        <div class="product-card" data-product-id="diodes">
+                            <div class="product-image">
+                                <img src="diodes.jpg" alt="Diodes">
+                            </div>
+                            <div class="product-info">
+                                <h3>Diodes</h3>
+                                <p class="price">KSH 10 each</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Allows current flow in one direction</li>
+                                        <li>Used for rectification and protection</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Transistors -->
+                        <div class="product-card" data-product-id="transistors">
+                            <div class="product-image">
+                                <img src="transistors.jpg" alt="Transistors">
+                            </div>
+                            <div class="product-info">
+                                <h3>Transistors</h3>
+                                <p class="price">KSH 10 each</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Switching and amplification functions</li>
+                                        <li>Available in NPN and PNP types</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Accessories Continued -->
+                <div class="category-section">
+                    <h2 class="category-title">Additional Accessories</h2>
+                    <div class="product-grid">
+
+                        <div class="product-card" data-product-id="power-supply-module">
+                            <div class="product-image">
+                                <img src="powersuply.jpg" alt="Power Supply">
+                            </div>
+                            <div class="product-info">
+                                <h3>Power Supply Module</h3>
+                                <p class="price">KSH 250</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Stable voltage supply</li>
+                                        <li>Perfect for Arduino projects</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-product-id="project-enclosure">
+                            <div class="product-image">
+                                <img src="case.jpg" alt="Project Enclosure">
+                            </div>
+                            <div class="product-info">
+                                <h3>Project Enclosure</h3>
+                                <p class="price">KSH 200</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Protective case for projects</li>
+                                        <li>Durable and compact design</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-product-id="solderable-breadboard">
+                            <div class="product-image">
+                                <img src="solderboard.jpg" alt="Solderable Breadboard">
+                            </div>
+                            <div class="product-info">
+                                <h3>Solderable Breadboard</h3>
+                                <p class="price">KSH 150</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Permanent circuit connections</li>
+                                        <li>Compact and easy to use</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-product-id="matrix-keypad">
+                            <div class="product-image">
+                                <img src="4x matrixboard.jpg" alt="Matrix Keypad">
+                            </div>
+                            <div class="product-info">
+                                <h3>4x5 Matrix Keypad</h3>
+                                <p class="price">KSH 500</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Membrane switch keypad</li>
+                                        <li>Compact and versatile input</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-product-id="jumper-wires">
+                            <div class="product-image">
+                                <img src="jumper .jpg" alt="Jumper Wires">
+                            </div>
+                            <div class="product-info">
+                                <h3>Jumper Wires Pack</h3>
+                                <p class="price">FREE</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>Essential for prototyping</li>
+                                        <li>Various lengths included</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Robot Components -->
+                <div class="category-section">
+                    <h2 class="category-title">Robot Components</h2>
+                    <div class="product-grid">
+
+                        <div class="product-card" data-product-id="robot-wheels">
+                            <div class="product-image">
+                                <img src="wheels.jpg" alt="Robot Wheels">
+                            </div>
+                            <div class="product-info">
+                                <h3>Robot Wheels</h3>
+                                <p class="price">KSH 150</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>High-quality wheels</li>
+                                        <li>Suitable for various robot projects</li>
+                                        <li>Grade A & B options</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-product-id="dc-motors">
+                            <div class="product-image">
+                                <img src="motor.jpg" alt="DC Motor">
+                            </div>
+                            <div class="product-info">
+                                <h3>DC Motors 3-6V</h3>
+                                <p class="price">KSH 300</p>
+                                <div class="product-details">
+                                    <h4>Features:</h4>
+                                    <ul>
+                                        <li>High-quality DC motors</li>
+                                        <li>Grade A & B available</li>
+                                        <li>Perfect for robotics</li>
+                                    </ul>
+                                </div>
+                                <button class="buy-button">Add to Cart</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="benefit-item">
-                <h3>Partnerships</h3>
-                <p>We collaborate with local & Global companies to bring you the best medical solutions available.</p>
-            </div>
+        </section>
+
+
+        <!-- Contact Section for Custom Requirements -->
+        <div class="custom-requirements">
+            <h2>Can't Find What You Need?</h2>
+            <p>We stock many more components than listed here. Contact us for:</p>
+            <ul>
+                <li>Custom component requirements</li>
+                <li>Bulk orders</li>
+                <li>Special specifications</li>
+                <li>Technical support</li>
+            </ul>
+            <button class="contact-button" onclick="scrollToContact()"><a
+                    href="mailto:sales@biomtekglobal.co.ke">contact us</a></button>
         </div>
-    </section>
+        </div>
 
-    <section class="partner-brands">
-        <h2>Brands</h2>
+
+        <section id="why-choose">
+            <h2>Why Choose BIOMTEK?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>High-quality Products</h3>
+                    <p>Genuine components with warranty</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Student Discounts</h3>
+                    <p>Special pricing for students and educational institutions</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Technical Support</h3>
+                    <p>Expert assistance for all your projects</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>1-2 weeks delivery after payment confirmation</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="bulk-ordering" class="bulk-section">
+            <h2>Bulk Ordering for Clubs and Classes</h2>
+            <div class="bulk-order-content">
+                <div class="bulk-info">
+                    <div class="steps">
+                        <div class="step">
+                            <i class="fas fa-users"></i>
+                            <h3>Group Information</h3>
+                            <p>Tell us about your institution, club, or class size</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-list"></i>
+                            <h3>Component List</h3>
+                            <p>Select components and specify quantities needed</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-percentage"></i>
+                            <h3>Get Discount</h3>
+                            <p>Receive special pricing based on order volume</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-truck"></i>
+                            <h3>Single Shipment</h3>
+                            <p>All items delivered together to your institution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="bulk-order-form" class="bulk-order-form">
+                    <h3>Submit Bulk Order Request</h3>
+
+                    <div class="form-group">
+                        <label for="institution">Institution Name *</label>
+                        <input type="text" id="institution" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-person">Contact Person *</label>
+                        <input type="text" id="contact-person" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="group-size">Number of Students/Members *</label>
+                        <input type="number" id="group-size" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Components Needed</label>
+                        <div class="component-list">
+                            <div class="component-item">
+                                <label for="arduino-uno">Arduino Uno R3</label>
+                                <input type="number" id="arduino-uno" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="arduino-nano">Arduino Nano</label>
+                                <input type="number" id="arduino-nano" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="esp32">ESP32 Module</label>
+                                <input type="number" id="esp32" min="0" value="0">
+                            </div>
+                            <div class="component-item">
+                                <label for="sensors">Basic Sensor Kit</label>
+                                <input type="number" id="sensors" min="0" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">Additional Requirements</label>
+                        <textarea id="additional-notes" rows="4"
+                            placeholder="List any specific requirements or additional components needed"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-date">Preferred Delivery Date</label>
+                        <input type="date" id="delivery-date">
+                    </div>
+
+                    <!-- Download Order Form -->
+                    <div class="form-group">
+                        <label>Download Bulk Order Form</label>
+                        <a href="BIOMTEK_Inquiry_and_Ordering_Form.pdf" class="download-link" download>Download Order Form </a>
+                    </div>
+
+                    <!-- Upload Completed Order Form -->
+                    <div class="form-group">
+                        <label for="order-upload">Upload Completed Order Form *</label>
+                        <input type="file" id="order-upload" accept=".xlsx,.csv,.pdf" required>
+                    </div>
+
+                    <button type="submit" class="submit-bulk-order">Submit Request</button>
+                </form>
+
+        </section>
+        <!-- Contact Us Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact <span class="biom">BIOM</span><span class="tek">TEK</span></h2>
+        <p class="section-subtitle">Get in touch with our technical support team</p>
         
-            <div class="brands-container" id="brands-Container">
-                
-                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
-                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
-                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
-                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
-                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
-                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
-                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
-                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
-                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
-                <!-- Cloning brands for continuous scrolling -->
-                
-                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
-                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
-                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
-                <div class="brand"><img src ="brand 5.jpg" alt="Brand 5"></div>
-                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
-                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
-                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
-                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
-                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
-                
-                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
-                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
-                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
-                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
-                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
-                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
-                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
-                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
-                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
-                <!-- Cloning brands for continuous scrolling -->
-                
-                <div class="brand"><img src="img/brand 2.jpg" alt="Brand 2"></div>
-                <div class="brand"><img src="img/brand 3.jpg" alt="Brand 3"></div>
-                <div class="brand"><img src="img/brand 4.jpg" alt="Brand 4"></div>
-                <div class="brand"><img src="img/brand 5.jpg" alt="Brand 5"></div>
-                <div class="brand"><img src="img/brand 6.jpg" alt="Brand 6"></div>
-                <div class="brand"><img src="img/brand 7.jpg" alt="Brand 7"></div>
-                <div class="brand"><img src="img/brand 8.jpg" alt="Brand 8"></div>
-                <div class="brand"><img src="img/brand 9.jpg" alt="Brand 9"></div>
-                <div class="brand"><img src="img/brand 11.jpg" alt="Brand 11"></div>
-            </div>
-        
-    </section>
-   
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <h2><span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span></h2>
-                <p>Advancing Medical Technology for Professional Excellence</p>
-            </div>
-            <div class="footer-center">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Medical Equipment</a></li>
-                    <li><a href="#">Professional Training</a></li>
-                    <li><a href="#">Consultancy Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-center">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Research Publications</a></li>
-                    <li><a href="#">Webinars</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                </ul>
-            </div>
-            <div class="footer-center">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-right">
-                <h3>Stay Informed</h3>
-                <p>Subscribe to our newsletter for the latest medical technology and professional development.</p>
-                <form action="#">
-                    <input type="email" placeholder="Your professional email" required>
-                    <button type="submit">Subscribe</button>
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message*</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 <span style="color:blue;">BIOM</span><span style="color: #ff4d05;">TEK</span>
-                All rights reserved. Empower. Innovate. collaborate. Network</p>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <div class="social-icons">
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-facebook'></i></a>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>123 Tech Park, Nairobi, Kenya</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>support@biomtek.co.ke</p>
+                    <p>sales@biomtek.co.ke</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>+254 745 284 565</p>
+                    <p>+254 790 235 311</p>
+                </div>
+                
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <ul>
+                        <li>Mon-Fri: 8:00 AM - 5:00 PM</li>
+                        <li>Sat: 9:00 AM - 2:00 PM</li>
+                        <li>Sun: Closed</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+    
+  
+</section>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Email: info@biomtekglobal.co.ke</p>
+                    <p><i class="fas fa-envelope"></i> Email: sales@biomtekglobal.co.ke</p>
+                    <p><i class="fas fa-phone"></i> Phone: +254 745 284 565 | +254 790 235 311</p>
 
-    <script src="script.js"></script>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#bulk-ordering">Bulk Orders</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Delivery Information</h3>
+                    <p>Processing time: 1-2 weeks after payment</p>
+                    <p>Single shipment for all items</p>
+                    <p>Satisfaction guaranteed or money back</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="subscribe-button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BIOMTEK. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="arduino.js"></script>
+     
+
+
+       <!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Your Cart</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <strong>Total:</strong> <span>0.00</span>
+        </div>
+        <div class="modal-actions">
+            <button class="continue-shopping">Continue Shopping</button>
+            <button class="proceed-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Modal -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <button class="back-to-cart">← Back to Cart</button>
+        <h2>Checkout</h2>
+        <div class="order-items"></div>
+        <div class="order-total">
+            <strong>Total:</strong> Ksh <span>0.00</span>
+        </div>
+        
+        <form id="checkout-form">
+            <div class="form-group">
+                <label for="shipping-address">Shipping Address</label>
+                <textarea id="shipping-address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" required>
+                    <option value="">Select payment</option>
+                    <option value="mpesa">M-Pesa</option>
+                    <option value="card">Credit Card</option>
+                    <option value="cash">Cash on Delivery</option>
+                </select>
+            </div>
+            <button type="submit" class="payment-button">Complete Order</button>
+        </form>
+    </div>
+</div>
+
+<!-- Auth Modal -->
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="auth-tabs">
+            <button id="login-tab" class="active">Login</button>
+            <button id="register-tab">Register</button>
+        </div>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit" class="auth-button">Login</button>
+        </form>
+        
+        <form id="register-form" style="display: none;">
+            <div class="form-group">
+                <label for="register-name">Full Name</label>
+                <input type="text" id="register-name" required>
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" required>
+            </div>
+            <button type="submit" class="auth-button">Register</button>
+        </form>
+    </div>
+</div>
+
+       
+
+
+
+    </main>
 </body>
+
 </html>
